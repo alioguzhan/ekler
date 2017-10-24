@@ -54,8 +54,9 @@ def ekli(kelime, ek_tipi, ayir=True):
     son_eslesen = None
     sonuc = None
 
-    for karakter in kelime_fixed[::-1]:
-        if karakter in _SESLI_HARFLER:
+    for index, karakter in enumerate(kelime_fixed[::-1]):
+        if karakter in _SESLI_HARFLER and index < 3:
+            # turkcede anlam ifade eden kelimelerde art arda 3 sessiz harf yok ??
             son_eslesen = karakter
             break
 
@@ -79,27 +80,27 @@ def ekli(kelime, ek_tipi, ayir=True):
 
         if son_karakter == son_eslesen:  # kelimenin sonu sesli harf
             if ayir:
-                sonuc = kelime_fixed + "'" + kaynastirma_harfi + ek
+                sonuc = kelime + "'" + kaynastirma_harfi + ek
             else:
-                sonuc = kelime_fixed + kaynastirma_harfi + ek
+                sonuc = kelime + kaynastirma_harfi + ek
         else:
             if ayir:
-                sonuc = kelime_fixed + "'" + ek
+                sonuc = kelime + "'" + ek
             else:
-                sonuc = kelime_fixed + ek
+                sonuc = kelime + ek
 
     # icinde sesli harf olmayan, yani turkce kurallarina aykiri
     # herhangi bir kelimeyse buraya duser.
     else:
         if ayir:
             if ek_tipi is IYELIK_EKI:
-                sonuc = kelime_fixed + "'nin"
+                sonuc = kelime + "'nın"
             else:
-                sonuc = kelime_fixed + "'ye"
+                sonuc = kelime + "'ye"
         else:
             if ek_tipi is IYELIK_EKI:
-                sonuc = kelime_fixed + "nin"
+                sonuc = kelime + "nın"
             else:
-                sonuc = kelime_fixed + "ye"
+                sonuc = kelime + "ye"
 
     return sonuc
