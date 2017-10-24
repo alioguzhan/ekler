@@ -39,9 +39,6 @@ Ornek Kullanim:
 
 ## To Do
 
-- BUYUK HARF ve camelCase destegi
+- ~~BUYUK HARF ve camelCase destegi~~
 - `Bulunma` ve `Ayrilma` ekleri ( ali'de , ali'den )
-- Daha fazla test
-
-
-    
+- ~~Daha fazla test~~
