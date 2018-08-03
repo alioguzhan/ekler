@@ -1,5 +1,5 @@
 <p align="center">
-<img src="ekler.png" width="300">
+<img src="ekler.jpg" width="300">
 </p>
 
 # Ekler
