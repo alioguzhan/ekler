@@ -124,10 +124,10 @@ class EkTestCase(unittest.TestCase):
     def test_silly_words_iyelik(self):
         """Testing silly words"""
         silly_words_map = {
-            "asddfg": "asddfg'nın",
-            "sndly": "sndly'nın",
-            "eksry": "eksry'nın",
-            "snr_srkbdy": "snr_srkbdy'nın"
+            "asddfg": "asddfg'nin",
+            "sndly": "sndly'nin",
+            "eksry": "eksry'nin",
+            "snr_srkbdy": "snr_srkbdy'nin"
         }
 
         for isim, sonuc in silly_words_map.items():

@@ -3,6 +3,10 @@
 </p>
 
 # Ekler
+[![Build Status](https://travis-ci.com/alioguzhan/ekler.svg?branch=master)](https://travis-ci.com/alioguzhan/ekler)
+![PyPI - Python Version](https://img.shields.io/badge/pypi-v.0.3-blue.svg)
+
+
 Turkce kelimelerin sonuna, fonetik yapilarina gore:
 
 - `Iyelik` 

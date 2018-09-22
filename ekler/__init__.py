@@ -94,12 +94,12 @@ def ekli(kelime, ek_tipi, ayir=True):
     else:
         if ayir:
             if ek_tipi is IYELIK_EKI:
-                sonuc = kelime + "'nın"
+                sonuc = kelime + "'nin"
             else:
                 sonuc = kelime + "'ye"
         else:
             if ek_tipi is IYELIK_EKI:
-                sonuc = kelime + "nın"
+                sonuc = kelime + "nin"
             else:
                 sonuc = kelime + "ye"
 

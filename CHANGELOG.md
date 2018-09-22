@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.3
+- Turkce olmayan kelimelerin sonuna gelen ek yanlisti. Duzeltildi.
+
 ## 0.2
 - Art arda 3 tane sessiz harf iceren kelimelere `anlamsiz` olarak islem yapiliyor
 - Buyuk harf ve mixedCase destegi 
