@@ -13,13 +13,13 @@ aoguzhanyildiz@gmail.com
 """
 from .iyelik import ekle_iyelik
 from .yonelme import ekle_yonelme
+from .bulunma import ekle_bulunma
 from .aykiri import ekle_aykiri
 # upper ve lower islemi turkce icin duzgun calismiyor bu harflerde.
 # kendimiz elle karsiliklarini vermemiz gerekiyor.
 _LOWER_MAP = {ord(u"İ"): u"i", ord(u"I"): u"ı"}
 
 _SESLI_HARFLER = "aeıioöuü"
-_INCE_HARFLER = "eiöü"
 
 IYELIK_EKI = 1  # Iyelik ekleri icin. Ornek: Ali'nin, Ayse'nin, Ahmet'in...
 YONELME_EKI = 2  # Yonelme ekleri icin. Ornek: Ali'ye, Ayse'ye, Ahmet'e...
@@ -75,9 +75,11 @@ def ekli(kelime, ek_tipi, ayir=True):
         elif ek_tipi is YONELME_EKI:
             sonuc = ekle_yonelme(son_eslesen, kelime, son_karakter, ayir)
         elif ek_tipi is BULUNMA_EKI:
-            pass
+            sonuc = ekle_bulunma(son_eslesen, kelime, son_karakter, ayir)
         else:
-            pass
+            # ayrilma eki
+            sonuc = ekle_bulunma(son_eslesen, kelime, son_karakter, ayir)
+            sonuc = sonuc + "n"
 
     # icinde sesli harf olmayan, yani turkce kurallarina aykiri
     # herhangi bir kelimeyse buraya duser.
