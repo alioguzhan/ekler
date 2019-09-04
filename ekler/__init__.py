@@ -11,16 +11,15 @@ ekeri ekleyen module.
 Ali Oguzhan Yildiz
 aoguzhanyildiz@gmail.com
 """
+from .iyelik import ekle_iyelik
+from .yonelme import ekle_yonelme
+from .aykiri import ekle_aykiri
 # upper ve lower islemi turkce icin duzgun calismiyor bu harflerde.
 # kendimiz elle karsiliklarini vermemiz gerekiyor.
 _LOWER_MAP = {ord(u"İ"): u"i", ord(u"I"): u"ı"}
 
 _SESLI_HARFLER = "aeıioöuü"
 _INCE_HARFLER = "eiöü"
-_IYELIK_GRUBU_1 = "aı"
-_IYELIK_GRUBU_2 = "ei"
-_IYELIK_GRUBU_3 = "ou"
-_IYELIK_GRUBU_4 = "öü"
 
 IYELIK_EKI = 1  # Iyelik ekleri icin. Ornek: Ali'nin, Ayse'nin, Ahmet'in...
 YONELME_EKI = 2  # Yonelme ekleri icin. Ornek: Ali'ye, Ayse'ye, Ahmet'e...
@@ -55,7 +54,7 @@ def ekli(kelime, ek_tipi, ayir=True):
     if not isinstance(kelime, str):
         raise Exception("kelime string olmali.")
 
-    if ek_tipi not in [IYELIK_EKI, YONELME_EKI]:
+    if ek_tipi not in [IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI]:
         raise Exception("Ek tipi " + str(ek_tipi) + " gecerli degil.")
 
     kelime_fixed = str(kelime).translate(_LOWER_MAP).lower()
@@ -72,45 +71,17 @@ def ekli(kelime, ek_tipi, ayir=True):
 
     if son_eslesen:
         if ek_tipi is IYELIK_EKI:
-            kaynastirma_harfi = "n"
-            if son_eslesen in _IYELIK_GRUBU_1:
-                ek = "ın"
-            elif son_eslesen in _IYELIK_GRUBU_2:
-                ek = "in"
-            elif son_eslesen in _IYELIK_GRUBU_3:
-                ek = "un"
-            else:
-                ek = "ün"
+            sonuc = ekle_iyelik(son_eslesen, kelime, son_karakter, ayir)
+        elif ek_tipi is YONELME_EKI:
+            sonuc = ekle_yonelme(son_eslesen, kelime, son_karakter, ayir)
+        elif ek_tipi is BULUNMA_EKI:
+            pass
         else:
-            kaynastirma_harfi = "y"
-            if son_eslesen in _INCE_HARFLER:
-                ek = "e"
-            else:
-                ek = "a"
-
-        if son_karakter == son_eslesen:  # kelimenin sonu sesli harf
-            if ayir:
-                sonuc = kelime + "'" + kaynastirma_harfi + ek
-            else:
-                sonuc = kelime + kaynastirma_harfi + ek
-        else:
-            if ayir:
-                sonuc = kelime + "'" + ek
-            else:
-                sonuc = kelime + ek
+            pass
 
     # icinde sesli harf olmayan, yani turkce kurallarina aykiri
     # herhangi bir kelimeyse buraya duser.
     else:
-        if ayir:
-            if ek_tipi is IYELIK_EKI:
-                sonuc = kelime + "'nin"
-            else:
-                sonuc = kelime + "'ye"
-        else:
-            if ek_tipi is IYELIK_EKI:
-                sonuc = kelime + "nin"
-            else:
-                sonuc = kelime + "ye"
+        sonuc = ekle_aykiri(ek_tipi, kelime, ayir)
 
     return sonuc
