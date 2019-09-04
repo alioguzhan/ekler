@@ -47,5 +47,5 @@ ekli(isim, YONELME_EKI, False) # kesme isareti yok
 ## To Do
 
 - ~~BUYUK HARF ve camelCase destegi~~
-- `Bulunma` ve `Ayrilma` ekleri ( ali'de , ali'den )
-- ~~Daha fazla test~~
+- ~~`Bulunma` ve `Ayrilma` ekleri ( ali'de , ali'den )~~
+- Daha fazla test
