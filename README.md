@@ -74,6 +74,6 @@ Kutuphaneyi gelistirme amacim `sahis`, `cografi yer`, `kullanici adi (username)`
 
 Ancak; kurum, mekan gibi sonuna gelecek eklerin bir standardi olmayan yerlerde hatali sonuclar verecektir. Mesela; `Ziraat Bankasi` kelimesine bulunma eki kullanmak istediginizde `Ziraat Bankasi'nda` yerine `Ziraat Bankasi'da` seklinde sonuc verecektir. 
 
-Ama mesela `Akbank` kelimesinde bu durum gecerli degil. Duzgun bir sekilde `Akbank'ta` ve 'Akbank'tan` seklinde sonuc verecektir. 
+Ama mesela `Akbank` kelimesinde bu durum gecerli degil. Duzgun bir sekilde `Akbank'ta` ve `Akbank'tan` seklinde sonuc verecektir. 
 
 Dedigim gibi sorunsuz calismasi icin basta bahsettigim durumlarda kullanabilirsiniz.
