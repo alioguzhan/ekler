@@ -12,7 +12,7 @@ classifiers = [
 
 setup(
     name='ekler',
-    version='0.3',
+    version='0.4',
     packages=find_packages(include=['ekler'],
                            exclude=['tests*', '.vscode', 'venv', '__*', ]),
     classifiers=classifiers,
@@ -21,6 +21,7 @@ setup(
     keywords="turkish, turkce, isim, ekler",
     license='MIT',
     description='Turkce kelimelerin sonuna fonetik yapilarina uygun ekleri ekleyen module.',
+    long_description_content_type='text/markdown',
     long_description=open('README.md').read(),
     url='https://github.com/alioguzhan/ekler',
     author='Ali Oguzhan Yildiz',
