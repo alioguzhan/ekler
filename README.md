@@ -3,8 +3,10 @@
 </p>
 
 # Ekler
-[![PyPI - Python Version](https://img.shields.io/badge/pypi-v.0.3-blue.svg)](https://pypi.org/project/ekler/)
+![PyPI](https://img.shields.io/pypi/v/ekler?color=blue)
 [![Build Status](https://travis-ci.com/alioguzhan/ekler.svg?branch=master)](https://travis-ci.com/alioguzhan/ekler)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ekler)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/ekler?color=orange)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
 

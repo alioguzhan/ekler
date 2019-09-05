@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.4
+- Bulunma ve Ayrilma ekleri geldi.
+
 ## 0.3
 - Turkce olmayan kelimelerin sonuna gelen ek yanlisti. Duzeltildi.
 
