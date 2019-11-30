@@ -68,7 +68,7 @@ ekli(isim, AYRILMA_EKI) # sertlesme var. den -> ten
 
 - ~~BUYUK HARF ve camelCase destegi~~
 - ~~`Bulunma` ve `Ayrilma` ekleri ( ali'de , ali'den )~~
-- Daha fazla test
+- ~~Daha fazla test~~
 
 ## Sınırlamalar
 
