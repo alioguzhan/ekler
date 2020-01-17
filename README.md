@@ -16,6 +16,7 @@ Turkce kelimelerin sonuna, fonetik yapilarina gore:
 - `Yonelme`
 - `Bulunma`
 - `Ayrılma`
+- `Çoğul`
 
 eklerini ekler.
 
@@ -61,14 +62,15 @@ ekli(isim, BULUNMA_EKI) # sertlesme var. de -> te
 ekli(isim, AYRILMA_EKI) # sertlesme var. den -> ten
 ## Gaziantep'ten
 
+isim = "kitap"
+ekli(isim, COGUL_EKI)
+## kitaplar
+
+isim = "kalem"
+ekli(isim, COGUL_EKI)
+## kalemler
 ```
 
-
-## To Do
-
-- ~~BUYUK HARF ve camelCase destegi~~
-- ~~`Bulunma` ve `Ayrilma` ekleri ( ali'de , ali'den )~~
-- ~~Daha fazla test~~
 
 ## Sınırlamalar
 

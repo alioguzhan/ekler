@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.5
+- Cogul ekleri geldi. 
+
 ## 0.4
 - Bulunma ve Ayrilma ekleri geldi.
 
