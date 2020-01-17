@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.5.1
+- f string kullanimini kaldir. eski usul devam.
+
 ## 0.5
 - Cogul ekleri geldi. 
 
