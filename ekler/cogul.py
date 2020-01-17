@@ -12,7 +12,7 @@ def ekle_cogul(son_eslesen, kelime, ayir):
         ek_orta_harf = "e"
 
 
-    ek = f"l{ek_orta_harf}r"
+    ek = "l" + ek_orta_harf + "r"
     ayirma_eki = "'" if ayir else ""
     sonuc = kelime + ayirma_eki + ek
     return sonuc
