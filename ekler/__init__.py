@@ -15,6 +15,7 @@ from .iyelik import ekle_iyelik
 from .yonelme import ekle_yonelme
 from .bulunma import ekle_bulunma
 from .aykiri import ekle_aykiri
+from .cogul import ekle_cogul
 # upper ve lower islemi turkce icin duzgun calismiyor bu harflerde.
 # kendimiz elle karsiliklarini vermemiz gerekiyor.
 _LOWER_MAP = {ord(u"İ"): u"i", ord(u"I"): u"ı"}
@@ -25,6 +26,7 @@ IYELIK_EKI = 1  # Iyelik ekleri icin. Ornek: Ali'nin, Ayse'nin, Ahmet'in...
 YONELME_EKI = 2  # Yonelme ekleri icin. Ornek: Ali'ye, Ayse'ye, Ahmet'e...
 BULUNMA_EKI = 3  # Bulunma ekleri. Ornek: Ali'de, Paris'te, Maraş'ta, Reis Büfe'de...
 AYRILMA_EKI = 4  # Ayrilma ekleri. Ornek: Ali'den, Paris'ten, Maraş'tan...
+COGUL_EKI = 5  # Cogul ekleri. Aliler, Osmanlar, Evler, park ve bahçeler müdürlüğü...
 
 
 def ekli(kelime, ek_tipi, ayir=True):
@@ -54,7 +56,7 @@ def ekli(kelime, ek_tipi, ayir=True):
     if not isinstance(kelime, str):
         raise Exception("kelime string olmali.")
 
-    if ek_tipi not in [IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI]:
+    if ek_tipi not in [IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI, COGUL_EKI]:
         raise Exception("Ek tipi " + str(ek_tipi) + " gecerli degil.")
 
     kelime_fixed = str(kelime).translate(_LOWER_MAP).lower()
@@ -76,6 +78,8 @@ def ekli(kelime, ek_tipi, ayir=True):
             sonuc = ekle_yonelme(son_eslesen, kelime, son_karakter, ayir)
         elif ek_tipi is BULUNMA_EKI:
             sonuc = ekle_bulunma(son_eslesen, kelime, son_karakter, ayir)
+        elif ek_tipi is COGUL_EKI:
+            sonuc = ekle_cogul(son_eslesen, kelime, ayir)
         else:
             # ayrilma eki
             sonuc = ekle_bulunma(son_eslesen, kelime, son_karakter, ayir)

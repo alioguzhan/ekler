@@ -1,6 +1,6 @@
 """Unit Tests"""
 import unittest
-from ekler import ekli, IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI
+from ekler import ekli, IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI, COGUL_EKI
 
 
 class EkTestCase(unittest.TestCase):
@@ -146,6 +146,52 @@ class EkTestCase(unittest.TestCase):
 
         for isim, sonuc in mixed_case_yonelme_map.items():
             modified = ekli(isim, YONELME_EKI)
+            self.assertEqual(sonuc, modified)
+
+    def test_cogul_ekleri(self):
+        """Testing cogul ekleri"""
+        cogul_ekleri_ozel_map = {
+            "ali": "aliler",
+            "ayşe": "ayşeler",
+            "onur": "onurlar",
+            "osman": "osmanlar",
+            "samet": "sametler",
+            "gürsel": "gürseller",
+            "nilüfer": "nilüferler",
+            "mert": "mertler",
+            "turgut": "turgutlar",
+            "fatih": "fatihler",
+            "umut": "umutlar",
+            "barkın": "barkınlar",
+            "utku": "utkular",
+            "can": "canlar",
+        }
+
+        for isim, sonuc in cogul_ekleri_ozel_map.items():
+            modified = ekli(isim, COGUL_EKI, False)
+            self.assertEqual(sonuc, modified)
+
+    def test_cogul_ekleri_ozel(self):
+        """Testing cogul ekleri"""
+        cogul_ekleri_ozel_map = {
+            "ali": "ali'ler",
+            "ayşe": "ayşe'ler",
+            "onur": "onur'lar",
+            "osman": "osman'lar",
+            "samet": "samet'ler",
+            "gürsel": "gürsel'ler",
+            "nilüfer": "nilüfer'ler",
+            "mert": "mert'ler",
+            "turgut": "turgut'lar",
+            "fatih": "fatih'ler",
+            "umut": "umut'lar",
+            "barkın": "barkın'lar",
+            "utku": "utku'lar",
+            "can": "can'lar",
+        }
+
+        for isim, sonuc in cogul_ekleri_ozel_map.items():
+            modified = ekli(isim, COGUL_EKI)
             self.assertEqual(sonuc, modified)
 
     def test_silly_words_iyelik(self):
