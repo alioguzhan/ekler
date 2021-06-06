@@ -1,10 +1,18 @@
 """Unit Tests"""
 import unittest
-from ekler import ekli, IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI, COGUL_EKI, VASITA_EKI
+from ekler import (
+    ekli,
+    IYELIK_EKI,
+    YONELME_EKI,
+    BULUNMA_EKI,
+    AYRILMA_EKI,
+    COGUL_EKI,
+    VASITA_EKI,
+)
 
 
 class EkTestCase(unittest.TestCase):
-    """ Tests for `ekli.py` """
+    """Tests for `ekli.py`"""
 
     def __init__(self, methodName):
         self.bulunma_ekleri_map = {
@@ -34,7 +42,7 @@ class EkTestCase(unittest.TestCase):
         super().__init__(methodName)
 
     def test_iyelik_ekleri(self):
-        """ Testing iyelik ekleri"""
+        """Testing iyelik ekleri"""
         iyelik_ekleri_map = {
             "ali": "alinin",
             "ayşe": "ayşenin",
