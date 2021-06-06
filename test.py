@@ -1,6 +1,6 @@
 """Unit Tests"""
 import unittest
-from ekler import ekli, IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI, COGUL_EKI
+from ekler import ekli, IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI, COGUL_EKI, VASITA_EKI
 
 
 class EkTestCase(unittest.TestCase):
@@ -123,6 +123,52 @@ class EkTestCase(unittest.TestCase):
 
         for isim, sonuc in yonelme_ekleri_ozel_map.items():
             modified = ekli(isim, YONELME_EKI)
+            self.assertEqual(sonuc, modified)
+
+    def test_vasita_ekleri(self):
+        """Testing vasita ekleri"""
+        vasita_ekleri_map = {
+            "ali": "aliyle",
+            "ayşe": "ayşeyle",
+            "onur": "onurla",
+            "osman": "osmanla",
+            "samet": "sametle",
+            "gürsel": "gürselle",
+            "nilüfer": "nilüferle",
+            "mert": "mertle",
+            "turgut": "turgutla",
+            "fatih": "fatihle",
+            "umut": "umutla",
+            "barkın": "barkınla",
+            "utku": "utkuyla",
+            "can": "canla",
+        }
+
+        for isim, sonuc in vasita_ekleri_map.items():
+            modified = ekli(isim, VASITA_EKI, False)
+            self.assertEqual(sonuc, modified)
+
+    def test_vasita_ekleri_ozel(self):
+        """Testing vasita ekleri [ozel]"""
+        vasita_ekleri_ozel_map = {
+            "ali": "ali'yle",
+            "ayşe": "ayşe'yle",
+            "onur": "onur'la",
+            "osman": "osman'la",
+            "samet": "samet'le",
+            "gürsel": "gürsel'le",
+            "nilüfer": "nilüfer'le",
+            "mert": "mert'le",
+            "turgut": "turgut'la",
+            "fatih": "fatih'le",
+            "umut": "umut'la",
+            "barkın": "barkın'la",
+            "utku": "utku'yla",
+            "can": "can'la",
+        }
+
+        for isim, sonuc in vasita_ekleri_ozel_map.items():
+            modified = ekli(isim, VASITA_EKI)
             self.assertEqual(sonuc, modified)
 
     def test_mixed_case_iyelik(self):
