@@ -1,13 +1,13 @@
 <p align="center">
-<img src="ekler.jpg" width="300">
+<img src="https://raw.githubusercontent.com/alioguzhan/ekler/master/ekler.jpg" width="300">
 </p>
 
 # Ekler
 
-![PyPI](https://img.shields.io/pypi/v/ekler?color=blue)
-[![Build Status](https://travis-ci.com/alioguzhan/ekler.svg?branch=master)](https://travis-ci.com/alioguzhan/ekler)
+[![PyPI](https://img.shields.io/pypi/v/ekler?color=blue)](https://pypi.org/project/ekler/)
+[![Run Tests](https://github.com/alioguzhan/ekler/actions/workflows/test.yml/badge.svg)](https://github.com/alioguzhan/ekler/actions/workflows/test.yml)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ekler)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/ekler?color=orange)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/ekler?color=blue)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
 Turkce kelimelerin sonuna, fonetik yapilarina gore:
