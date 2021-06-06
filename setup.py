@@ -12,7 +12,7 @@ classifiers = [
 
 setup(
     name='ekler',
-    version='0.5.1',
+    version='0.6.0',
     packages=find_packages(include=['ekler'],
                            exclude=['tests*', '.vscode', 'venv', '__*', ]),
     classifiers=classifiers,

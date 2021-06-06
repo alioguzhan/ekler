@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.6.0
+
+- Vasita ekleri geldi. ([@midorikocak](https://github.com/midorikocak)'a tesekkurler.)
+
 ## 0.5.1
 - f string kullanimini kaldir. eski usul devam.
 
