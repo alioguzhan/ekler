@@ -11,7 +11,6 @@ def ekle_cogul(son_eslesen, kelime, ayir):
     elif son_eslesen in _BULUNMA_GRUBU_2:
         ek_orta_harf = "e"
 
-
     ek = "l" + ek_orta_harf + "r"
     ayirma_eki = "'" if ayir else ""
     sonuc = kelime + ayirma_eki + ek

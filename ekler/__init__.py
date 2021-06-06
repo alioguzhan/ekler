@@ -1,11 +1,14 @@
 # pylint: disable=too-many-branches, invalid-name
 """ EKLER:
 Turkce kelimelerin sonuna, fonetik yapilarina gore:
+
  - iyelik
  - yonelme
  - bulunma
  - ayrilma
+ - cogul
  - vasita
+
 ekeri ekleyen module.
 
 2019
@@ -18,6 +21,7 @@ from .bulunma import ekle_bulunma
 from .aykiri import ekle_aykiri
 from .cogul import ekle_cogul
 from .vasita import ekle_vasita
+
 # upper ve lower islemi turkce icin duzgun calismiyor bu harflerde.
 # kendimiz elle karsiliklarini vermemiz gerekiyor.
 _LOWER_MAP = {ord(u"İ"): u"i", ord(u"I"): u"ı"}
@@ -29,7 +33,9 @@ YONELME_EKI = 2  # Yonelme ekleri icin. Ornek: Ali'ye, Ayse'ye, Ahmet'e...
 BULUNMA_EKI = 3  # Bulunma ekleri. Ornek: Ali'de, Paris'te, Maraş'ta, Reis Büfe'de...
 AYRILMA_EKI = 4  # Ayrilma ekleri. Ornek: Ali'den, Paris'ten, Maraş'tan...
 COGUL_EKI = 5  # Cogul ekleri. Aliler, Osmanlar, Evler, park ve bahçeler müdürlüğü...
-VASITA_EKI = 6  # Vasıta ekleri. Ali'yle, Osman'la, Evle, park ve bahçeler müdürlüğüyle...
+# fmt: off
+VASITA_EKI = 6   # Vasıta ekleri. Ali'yle, Osman'la, Evle, park ve bahçeler müdürlüğüyle...
+
 
 def ekli(kelime, ek_tipi, ayir=True):
     """Verilen kelimeyi belirtilen parametrelere gore sonuna ek halmis halde
@@ -37,20 +43,18 @@ def ekli(kelime, ek_tipi, ayir=True):
 
     kelime -> herhangi bir string.
 
-    ek_tipi -> 1 ya da 2 olabilir.)
-    1 -> IYELIK_EKI -> Ornek: Ali'nin, Ayse'nin, Ahmet'in...
-    2 -> YONELME_EKI -> Ornek: Ali'ye, Ayse'ye, Ahmet'e...
+    ek_tipi:
+
+    IYELIK_EKI  = 1  # Iyelik ekleri icin. Ornek: Ali'nin, Ayse'nin, Ahmet'in...
+    YONELME_EKI = 2  # Yonelme ekleri icin. Ornek: Ali'ye, Ayse'ye, Ahmet'e...
+    BULUNMA_EKI = 3  # Bulunma ekleri. Ornek: Ali'de, Paris'te, Maraş'ta, Reis Büfe'de...
+    AYRILMA_EKI = 4  # Ayrilma ekleri. Ornek: Ali'den, Paris'ten, Maraş'tan...
+    COGUL_EKI   = 5  # Cogul ekleri. Aliler, Osmanlar, Evler, park ve bahçeler müdürlüğü...
+    VASITA_EKI  = 6  # Vasıta ekleri. Ali'yle, Osman'la, Evle, park ve bahçeler müdürlüğüyle...
 
     ayir -> Verilen kelime ozel isim ise sonuna gelen eki kesme isareti ile
     ayirir. Default olarak True. Ekin ayrilmasini istemiyorsaniz False olarak
     belirtmeniz gerekir.
-
-    NOTE: Turkcedeki buyuk i / kucuk i ayriminda sorun oldugu icin,
-    verilen kelime oncelikle kucuk harfe cevrilir. Yani kelimeniz buyuk harf
-    iceriyorsa ya da komple buyuk harfse fonksiyondan donen sonucu tekrar
-    istediginiz hale sokmaniz gerekir.
-
-    TODO: Bunu aslinda otomatik hale getirebiliriz.
     """
     if not kelime or not ek_tipi:
         return None
@@ -58,7 +62,14 @@ def ekli(kelime, ek_tipi, ayir=True):
     if not isinstance(kelime, str):
         raise Exception("kelime string olmali.")
 
-    if ek_tipi not in [IYELIK_EKI, YONELME_EKI, BULUNMA_EKI, AYRILMA_EKI, COGUL_EKI, VASITA_EKI]:
+    if ek_tipi not in [
+        IYELIK_EKI,
+        YONELME_EKI,
+        BULUNMA_EKI,
+        AYRILMA_EKI,
+        COGUL_EKI,
+        VASITA_EKI,
+    ]:
         raise Exception("Ek tipi " + str(ek_tipi) + " gecerli degil.")
 
     kelime_fixed = str(kelime).translate(_LOWER_MAP).lower()
