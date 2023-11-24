@@ -9,6 +9,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ekler)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/ekler?color=blue)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+[![FreePalestine.Dev](https://freepalestine.dev/badge?t=d&u=0&r=1)](https://freepalestine.dev)
 
 Turkce kelimelerin sonuna, fonetik yapilarina gore:
 
