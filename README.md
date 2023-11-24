@@ -1,6 +1,8 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/alioguzhan/ekler/master/ekler.jpg" width="300">
+<img src="./ekler.png" width="300">
 </p>
+
+[![FreePalestine.Dev](https://freepalestine.dev/header/1)](https://freepalestine.dev)
 
 # Ekler
 
